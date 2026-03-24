@@ -72,6 +72,21 @@ MotherDuck-DuckDB-Course/
 ```
 
 ---
+## ⚙️ How to Run
+
+```bash
+
+git clone https://github.com/your-username/project.git
+cd MotherDuck-DuckDB-Course
+
+docker-compose up --build
+
+python scripts/4_2_elt.py
+python scripts/4_3_export.py
+
+```
+
+---
 
 ## 🧠 Key Insights
 
