@@ -1,4 +1,4 @@
-# 🧠 NYC 311 Elevator Complaints Analysis
+# 🐤 DuckDB ETL Pipeline — NYC 311 Complaints Analysis
 
 Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics.
 
