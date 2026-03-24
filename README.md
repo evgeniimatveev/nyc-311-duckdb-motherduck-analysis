@@ -120,6 +120,12 @@ dir .\exports
 docker compose run --rm duckdb_pipeline python scripts/check_exports.py
 
 ```
+🚀 Run full pipeline (one command)
+
+```powershell
+# Run full ETL + Export + Validation pipeline
+docker compose run --rm pipeline_runner
+```
 ---
 
 ## 🧠 Key Insights
