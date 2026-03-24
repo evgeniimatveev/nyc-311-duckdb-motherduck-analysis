@@ -1,11 +1,6 @@
-# Secrets
+venv/
 .env
-
-# Binary data files
-*.parquet
 *.duckdb
-*.png
-
-# Ignore all CSV files except the one we explicitly want
-*.csv
-!311_Elevator_Service_Requests_.csv
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

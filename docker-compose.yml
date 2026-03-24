@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  duckdb_pipeline:
+    build: .
+    container_name: duckdb_pipeline
+    volumes:
+      - .:/app
+      - duckdb_data:/app/data
+    working_dir: /app
+    command: python scripts/4_2_elt.py
+
+volumes:
+  duckdb_data:
