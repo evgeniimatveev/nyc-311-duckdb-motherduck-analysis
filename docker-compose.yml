@@ -1,11 +1,7 @@
 services:
   duckdb_pipeline:
     build: .
-    container_name: duckdb_pipeline
     volumes:
       - .:/app
     working_dir: /app
     command: python scripts/4_2_elt.py
-
-volumes:
-  duckdb_data:
