@@ -88,6 +88,19 @@ python scripts/4_3_export.py
 
 ---
 
+## ✅ Validation
+
+The pipeline was tested in a clean Docker environment from scratch.
+
+- ✔ Repository cloned into a fresh local directory
+- ✔ Docker image built successfully
+- ✔ ELT pipeline completed with exit code 0
+- ✔ Export pipeline generated CSV and Parquet outputs
+- ✔ Export files were re-generated successfully after cleanup
+- ✔ Output consistency verified between CSV and Parquet
+
+---
+
 ## 🧠 Key Insights
 
 - 📈 Complaint volume shows **clear seasonal spikes (summer peak)**
