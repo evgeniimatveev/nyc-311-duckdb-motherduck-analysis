@@ -55,7 +55,7 @@ cd nyc-311-duckdb-motherduck-analysis
 ## 📁 Project Structure
 
 ```bash
-MotherDuck-DuckDB-Course/
+NYC-311-duckdb-motherduck-analysis/
 │
 ├── data/
 │   └── 311_Elevator_Service_Requests_.csv
