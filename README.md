@@ -83,6 +83,15 @@ MotherDuck-DuckDB-Course/
 
 ---
 
+## 💼 Business Impact
+
+- Helps identify **high-risk boroughs for infrastructure failure**
+- Supports **predictive maintenance planning**
+- Enables better **resource allocation across NYC**
+- Can be extended into **real-time monitoring dashboards**
+
+---
+
 ## 📸 Storytelling (Visual Analysis)
 
 <details>
@@ -140,7 +149,6 @@ MotherDuck-DuckDB-Course/
 ![Schema](screenshots/Storytelling/Inspect%20schema_ui.jpg)
 
 </details>
-
 
 ---
 
