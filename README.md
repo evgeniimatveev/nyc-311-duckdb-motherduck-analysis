@@ -29,6 +29,17 @@ It answers key questions:
 
 ---
 
+## 🚀 Getting Started
+
+Clone the repository and navigate to the project folder:
+
+```bash
+git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
+cd nyc-311-duckdb-motherduck-analysis
+
+```
+---
+
 ## 🔧 Tech Stack
 
 - 🐤 **DuckDB** – in-process analytics engine  
