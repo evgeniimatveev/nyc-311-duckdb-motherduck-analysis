@@ -84,19 +84,17 @@ The pipeline was tested in a clean Docker environment from scratch.
 - ✔ Output consistency verified between CSV and Parquet
 
 ---
-## 🧪 How to Validate the Pipeline
+## 🧪 How to Validate the Pipeline (PowerShell)
 
-Run the following checks step by step:
-
-```bash
-# 1. Build and run the ELT pipeline
-docker compose up --build
+```powershell
+# 1. Run ELT pipeline
+docker compose run --rm duckdb_pipeline
 
 # 2. Run export pipeline
-docker compose run --rm duckdb_pipeline python scripts/4_3_export.py
+docker compose run --rm export_pipeline
 
 # 3. Verify exported files exist
-ls exports
+dir .\exports
 
 # 4. Validate CSV and Parquet consistency
 docker compose run --rm duckdb_pipeline python scripts/check_exports.py
@@ -240,10 +238,6 @@ docker compose run --rm duckdb_pipeline python scripts/check_exports.py
 
 Evgenii Matveev
 Data Analyst | MLOps | Automation
-
-
-
-## 🧪 How to Validate the Pipeline (PowerShell)
 
 
 ## 🧪 How to Validate the Pipeline (PowerShell)
