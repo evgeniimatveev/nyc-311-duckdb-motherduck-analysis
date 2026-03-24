@@ -73,9 +73,9 @@ nyc-311-duckdb-motherduck-analysis/
 │   └── Storytelling/
 │
 ├── scripts/
-│   ├── 4_1_duckdb_test.py
-│   ├── 4_2_elt.py
-│   └── 4_3_export.py
+│    ├── 4_2_elt.py
+│
+ └── 4_3_export.py
 │
 ├── docker-compose.yml
 ├── Dockerfile
@@ -103,8 +103,9 @@ This ensures full reproducibility and reliability of the data pipeline.
 
 ---
 
-Run the following steps to reproduce the pipeline and verify outputs locally:
 ## 🧪 How to Validate the Pipeline (PowerShell)
+
+Run the following steps to reproduce the pipeline and verify outputs locally:
 
 ### Optional: run a quick DuckDB smoke test
 ```powershell
