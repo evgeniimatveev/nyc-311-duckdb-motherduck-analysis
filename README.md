@@ -105,7 +105,8 @@ This ensures full reproducibility and reliability of the data pipeline.
 
 Run the following steps to reproduce the pipeline and verify outputs locally:
 ## 🧪 How to Validate the Pipeline (PowerShell)
-## Optional: run a quick DuckDB smoke test
+
+### Optional: run a quick DuckDB smoke test
 ```powershell
 # Verify DuckDB installation and basic query execution
 python scripts/smoke_test_duckdb.py
@@ -114,7 +115,7 @@ python scripts/smoke_test_duckdb.py
 docker compose run --rm duckdb_pipeline python scripts/smoke_test_duckdb.py
 
 ```
-## Run step-by-step pipeline validation
+### Run step-by-step pipeline validation
 ```powershell
 # 1. Run ELT pipeline
 docker compose run --rm duckdb_pipeline
@@ -129,7 +130,7 @@ dir .\exports
 docker compose run --rm duckdb_pipeline python scripts/check_exports.py
 
 ```
-##  Run full pipeline (one command)
+###  Run full pipeline (one command)
 
 ```powershell
 # Run full ETL + Export + Validation pipeline
