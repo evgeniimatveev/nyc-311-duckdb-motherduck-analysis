@@ -73,9 +73,11 @@ nyc-311-duckdb-motherduck-analysis/
 │   └── Storytelling/
 │
 ├── scripts/
-│    ├── 4_2_elt.py
-│
- └── 4_3_export.py
+│   ├── 4_2_elt.py
+│   ├── 4_3_export.py
+│   ├── check_exports.py
+│   ├── run_pipeline.py
+│   └── smoke_test_duckdb.py
 │
 ├── docker-compose.yml
 ├── Dockerfile
