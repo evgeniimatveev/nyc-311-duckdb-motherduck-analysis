@@ -76,7 +76,7 @@ MotherDuck-DuckDB-Course/
 
 ```bash
 
-git clone https://github.com/your-username/project.git
+git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
 cd MotherDuck-DuckDB-Course
 
 docker-compose up --build
