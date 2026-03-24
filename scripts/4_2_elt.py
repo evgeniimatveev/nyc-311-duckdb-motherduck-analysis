@@ -4,9 +4,9 @@ from pathlib import Path
 import duckdb
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 DB_FILE = BASE_DIR / "elt.duckdb"
-CSV_FILE = BASE_DIR / "311_Elevator_Service_Requests_.csv"
+CSV_FILE = BASE_DIR / "data" / "311_Elevator_Service_Requests_.csv"
 
 RAW_TABLE = "service_requests"
 CLEAN_TABLE = "clean_requests"
