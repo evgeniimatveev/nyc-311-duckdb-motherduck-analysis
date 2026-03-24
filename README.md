@@ -70,22 +70,6 @@ MotherDuck-DuckDB-Course/
 └── README.md
 
 ```
-
----
-## ⚙️ How to Run
-Run the full pipeline locally:
-```bash
-
-git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
-cd nyc-311-duckdb-motherduck-analysis
-
-docker-compose up --build
-
-python scripts/4_2_elt.py
-python scripts/4_3_export.py
-
-```
-
 ---
 
 ## ✅ Validation
@@ -100,6 +84,25 @@ The pipeline was tested in a clean Docker environment from scratch.
 - ✔ Output consistency verified between CSV and Parquet
 
 ---
+## 🧪 How to Validate the Pipeline
+
+Run the following checks step by step:
+
+```bash
+# 1. Build and run the ELT pipeline
+docker compose up --build
+
+# 2. Run export pipeline
+docker compose run --rm duckdb_pipeline python scripts/4_3_export.py
+
+# 3. Verify exported files exist
+ls exports
+
+# 4. Validate CSV and Parquet consistency
+docker compose run --rm duckdb_pipeline python scripts/check_exports.py
+
+```
+
 
 ## 🧠 Key Insights
 
@@ -237,3 +240,9 @@ The pipeline was tested in a clean Docker environment from scratch.
 
 Evgenii Matveev
 Data Analyst | MLOps | Automation
+
+
+
+
+
+
