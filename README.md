@@ -82,6 +82,25 @@ nyc-311-duckdb-motherduck-analysis/
 └── README.md
 
 ```
+---
+
+## ✅ Validation
+Follow these steps to run and validate the full pipeline locally:
+
+The pipeline was tested in a clean Docker environment from scratch.
+
+- ✔ Repository cloned into a fresh local directory
+- ✔ Docker image built successfully
+- ✔ ELT pipeline completed with exit code 0
+- ✔ Export pipeline generated CSV and Parquet outputs
+- ✔ Export files were re-generated successfully after cleanup
+- ✔ Output consistency verified between CSV and Parquet
+
+This ensures full reproducibility and reliability of the data pipeline.
+
+---
+
+Run the following steps to reproduce the pipeline and verify outputs locally:
 ## 🧪 How to Validate the Pipeline (PowerShell)
 
 ```powershell
@@ -99,19 +118,6 @@ docker compose run --rm duckdb_pipeline python scripts/check_exports.py
 
 ```
 ---
-
-## ✅ Validation
-Follow these steps to run and validate the full pipeline locally:
-
-The pipeline was tested in a clean Docker environment from scratch.
-
-- ✔ Repository cloned into a fresh local directory
-- ✔ Docker image built successfully
-- ✔ ELT pipeline completed with exit code 0
-- ✔ Export pipeline generated CSV and Parquet outputs
-- ✔ Export files were re-generated successfully after cleanup
-- ✔ Output consistency verified between CSV and Parquet
-
 
 ## 🧠 Key Insights
 
