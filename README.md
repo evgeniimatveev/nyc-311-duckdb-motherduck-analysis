@@ -101,39 +101,6 @@ MotherDuck-DuckDB-Course/
 ## 📸 Storytelling (Visual Analysis)
 
 <details>
-<summary>Open Storytelling Screenshots</summary>
-
-### 📈 Monthly Trend by Borough
-![Monthly Trend](screenshots/Storytelling/Monthly%20trend%20by%20borough_ui.jpg)
-
-### 🌿 Total Complaints by Borough
-![Total Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
-
-### 🔝 Top Complaint Types
-![Top Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
-
-### 📊 Peak Month Detection
-![Peak Months](screenshots/Storytelling/Peak%20months%20detection_ui.jpg)
-
-### 🔍 Multi-Borough Comparison
-![Comparison](screenshots/Storytelling/Multi-borough%20comparison%20(PORTFOLIO%20GOLD)_ui.jpg)
-
-### 🧠 Advanced Analysis (EXPLAIN ANALYZE)
-![Explain](screenshots/Storytelling/EXPLAIN%20ANALYZE%20%E2%80%94%20Real%20Execution_ui.jpg)
-
-### ⚙️ Query Optimization
-![Optimization](screenshots/Storytelling/Improve%20the%20query%20(VERY%20IMPORTANT)_ui.jpg)
-
-### 🧩 Schema Inspection
-![Schema](screenshots/Storytelling/Inspect%20schema_ui.jpg)
-
-</details>
-
----
-
-## 📸 Storytelling (Visual Analysis)
-
-<details>
 <summary>📈 Monthly Trend by Borough</summary>
 
 ![Monthly Trend](screenshots/Storytelling/Monthly%20trend%20by%20borough_ui.jpg)
@@ -143,14 +110,14 @@ MotherDuck-DuckDB-Course/
 <details>
 <summary>🌿 Total Complaints by Borough</summary>
 
-![Total Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
+![Total Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
 
 </details>
 
 <details>
 <summary>🔝 Top Complaint Types</summary>
 
-![Top Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
+![Top Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
 
 </details>
 
