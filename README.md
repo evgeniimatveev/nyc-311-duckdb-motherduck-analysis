@@ -1,6 +1,6 @@
 # 🐤 DuckDB ETL Pipeline — NYC 311 Complaints Analysis
 
-Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics.
+Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics — designed to simulate a production-ready data workflow.
 
 ![DuckDB](https://img.shields.io/badge/DuckDB-Analytics-orange)
 ![MotherDuck](https://img.shields.io/badge/MotherDuck-Cloud-blue)
