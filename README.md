@@ -1,4 +1,6 @@
-# Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics.
+# 🧠 NYC 311 Elevator Complaints Analysis
+
+Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics.
 
 ![DuckDB](https://img.shields.io/badge/DuckDB-Analytics-orange)
 ![MotherDuck](https://img.shields.io/badge/MotherDuck-Cloud-blue)
