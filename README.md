@@ -278,3 +278,28 @@ docker compose run --rm pipeline_runner
 Evgenii Matveev
 Data Analyst | MLOps | Automation
 
+---
+
+## 🙏 Credits & Inspiration
+
+<details>
+<summary>Click to expand</summary>
+
+Big thanks to **Andreas Kretz** for the original DuckDB + MotherDuck learning resources 🙌
+
+This project was inspired by his course and helped me better understand modern analytics workflows, DuckDB, and reproducible data pipelines.
+
+### 🔗 Resources
+
+- 📦 Course Repository:  
+  https://github.com/andkret/MotherDuck-DuckDB-Course  
+
+- 🧑‍💻 GitHub:  
+  https://github.com/andkret  
+
+- 💼 LinkedIn:  
+  https://www.linkedin.com/in/andreas-kretz/  
+
+Highly recommend his content if you're learning data engineering 🚀
+
+</details>
