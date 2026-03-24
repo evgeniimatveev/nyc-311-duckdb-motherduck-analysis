@@ -5,3 +5,10 @@ services:
       - .:/app
     working_dir: /app
     command: python scripts/4_2_elt.py
+
+  export_pipeline:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python scripts/4_3_export.py
