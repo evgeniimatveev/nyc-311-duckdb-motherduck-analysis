@@ -12,3 +12,10 @@ services:
       - .:/app
     working_dir: /app
     command: python scripts/4_3_export.py
+
+  pipeline_runner:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python scripts/run_pipeline.py
