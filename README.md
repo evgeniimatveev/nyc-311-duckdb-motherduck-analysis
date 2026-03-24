@@ -82,6 +82,14 @@ NYC-311-duckdb-motherduck-analysis/
 └── README.md
 
 ```
+## ⚙️ How to Run
+
+Run the full pipeline locally:
+
+```bash
+docker compose run --rm duckdb_pipeline
+docker compose run --rm export_pipeline
+```
 ---
 
 ## ✅ Validation
@@ -252,20 +260,3 @@ docker compose run --rm duckdb_pipeline python scripts/check_exports.py
 Evgenii Matveev
 Data Analyst | MLOps | Automation
 
-
-## 🧪 How to Validate the Pipeline (PowerShell)
-
-```powershell
-# 1. Run ELT pipeline
-docker compose run --rm duckdb_pipeline
-
-# 2. Run export pipeline
-docker compose run --rm export_pipeline
-
-# 3. Verify exported files exist
-dir .\exports
-
-# 4. Validate CSV and Parquet consistency
-docker compose run --rm duckdb_pipeline python scripts/check_exports.py
-
-```
