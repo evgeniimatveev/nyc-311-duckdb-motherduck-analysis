@@ -35,6 +35,7 @@ Clone the repository and navigate to the project folder:
 
 ```bash
 git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
+
 cd nyc-311-duckdb-motherduck-analysis
 
 ```
