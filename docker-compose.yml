@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   duckdb_pipeline:
     build: .
