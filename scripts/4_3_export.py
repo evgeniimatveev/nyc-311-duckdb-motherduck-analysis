@@ -3,7 +3,7 @@ from pathlib import Path
 import duckdb
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 DB_FILE = BASE_DIR / "elt.duckdb"
 CSV_EXPORT = BASE_DIR / "clean_requests.csv"
 PARQUET_EXPORT = BASE_DIR / "clean_requests.parquet"
