@@ -85,6 +85,7 @@ MotherDuck-DuckDB-Course/
 ---
 
 ## ✅ Validation
+Follow these steps to run and validate the full pipeline locally:
 
 The pipeline was tested in a clean Docker environment from scratch.
 
