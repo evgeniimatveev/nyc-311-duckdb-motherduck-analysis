@@ -86,10 +86,10 @@ MotherDuck-DuckDB-Course/
 ![Peak Months](screenshots/Storytelling/Peak%20months%20detection_ui.jpg)
 
 ### 🔍 Multi-Borough Comparison
-![Comparison](screenshots/Storytelling/Multi-borough%20comparison%20(PORTFOLIO)_ui.jpg)
+![Comparison](screenshots/Storytelling/Multi-borough%20comparison%20(PORTFOLIO%20GOLD)_ui.jpg)
 
 ### 🧠 Advanced Analysis (EXPLAIN ANALYZE)
-![Explain](screenshots/Storytelling/EXPLAIN_ui.jpg)
+![Explain](screenshots/Storytelling/EXPLAIN%20ANALYZE%20%E2%80%94%20Real%20Execution_ui.jpg)
 
 ### ⚙️ Query Optimization
 ![Optimization](screenshots/Storytelling/Improve%20the%20query%20(VERY%20IMPORTANT)_ui.jpg)
