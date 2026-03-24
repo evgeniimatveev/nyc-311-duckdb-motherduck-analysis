@@ -73,7 +73,7 @@ MotherDuck-DuckDB-Course/
 
 ---
 ## ⚙️ How to Run
-
+Run the full pipeline locally:
 ```bash
 
 git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
