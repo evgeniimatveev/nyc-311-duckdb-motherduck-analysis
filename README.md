@@ -77,10 +77,9 @@ MotherDuck-DuckDB-Course/
 ![Monthly Trend](screenshots/Storytelling/Monthly%20trend%20by%20borough_ui.jpg)
 
 ### 🌿 Total Complaints by Borough
-![Total Complaints](screenshots/Storytelling/%20Total%20complaints%20by%20borough_ui.jpg)
-
+![Total Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
 ### 🔝 Top Complaint Types
-![Top Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
+![Top Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
 
 ### 📊 Peak Month Detection
 ![Peak Months](screenshots/Storytelling/Peak%20months%20detection_ui.jpg)
