@@ -180,6 +180,117 @@ MotherDuck-DuckDB-Course/
 
 ---
 
+## 📸 Data Storytelling & Visual Insights
+
+<details>
+<summary>📈 Monthly Trend by Borough</summary>
+
+**Insight:** Seasonal trends are consistent across boroughs, with mid-year increases observed everywhere, while absolute complaint volume varies significantly by location.
+
+![Monthly Trend](screenshots/Storytelling/Monthly%20trend%20by%20borough_ui.jpg)
+
+</details>
+
+<details>
+<summary>🌿 Total Complaints by Borough</summary>
+
+**Insight:** Bronx leads in total complaints, indicating higher infrastructure pressure, while Staten Island shows minimal activity, highlighting uneven system load distribution.
+
+![Total Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
+
+</details>
+
+<details>
+<summary>🔝 Top Complaint Types</summary>
+
+**Insight:** Most complaints are driven by non-working elevators and lack of backup systems, revealing critical reliability issues across building infrastructure.
+
+![Top Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
+
+</details>
+
+<details>
+<summary>📊 Peak Month Detection</summary>
+
+**Insight:** Complaint peaks occur during summer months, while steady activity during winter indicates persistent baseline demand throughout the year.
+
+![Peak Months](screenshots/Storytelling/Peak%20months%20detection_ui.jpg)
+
+</details>
+
+<details>
+<summary>🔍 Multi-Borough Comparison</summary>
+
+**Insight:** Higher complaint volumes correlate with urban density and building concentration, with Bronx experiencing the greatest system load.
+
+![Comparison](screenshots/Storytelling/Multi-borough%20comparison%20(PORTFOLIO%20GOLD)_ui.jpg)
+
+</details>
+
+<details>
+<summary>🏢 Top Agencies Handling Requests</summary>
+
+**Insight:** All elevator-related complaints are handled by a single agency (DOB), indicating centralized responsibility but potential operational bottlenecks.
+
+![Top Agencies](screenshots/Storytelling/top%20agencies%20handling%20requests_ui.jpg)
+
+</details>
+
+<details>
+<summary>🧪 First Aggregation Step</summary>
+
+**Insight:** Initial aggregation confirms consistent monthly complaint distribution and establishes a reliable baseline for further analytical exploration.
+
+![First Aggregation](screenshots/Storytelling/Run%20your%20first%20aggregation_ui.jpg)
+
+</details>
+
+<details>
+<summary>📘 Query Plan Inspection (EXPLAIN)</summary>
+
+**Insight:** The execution plan shows a sequential scan followed by projection and aggregation, illustrating DuckDB’s efficient pipeline-based query processing.
+
+![Explain](screenshots/Storytelling/EXPLAIN_ui.jpg)
+
+</details>
+
+<details>
+<summary>🧠 Advanced Analysis (EXPLAIN ANALYZE)</summary>
+
+**Insight:** Real execution metrics confirm fast query performance with minimal processing time, demonstrating DuckDB’s efficiency for analytical workloads.
+
+![Explain Analyze](screenshots/Storytelling/EXPLAIN%20ANALYZE%20%E2%80%94%20Real%20Execution_ui.jpg)
+
+</details>
+
+<details>
+<summary>⚙️ Query Optimization</summary>
+
+**Insight:** Optimized queries improve execution clarity and efficiency, highlighting the importance of proper aggregation and filtering strategies.
+
+![Optimization](screenshots/Storytelling/Improve%20the%20query%20(VERY%20IMPORTANT)_ui.jpg)
+
+</details>
+
+<details>
+<summary>🧩 Schema Inspection</summary>
+
+**Insight:** Flexible schema with multiple categorical and timestamp fields enables powerful analysis but requires careful type handling and data preparation.
+
+![Schema](screenshots/Storytelling/Inspect%20schema_ui.jpg)
+
+</details>
+
+<details>
+<summary>🚀 Advanced Analysis Version</summary>
+
+**Insight:** Advanced analysis reinforces key patterns, emphasizing seasonal peaks and sustained infrastructure pressure throughout the year.
+
+![Advanced Version](screenshots/Storytelling/Advanced%20version%20(%20THIS%20IS%20STRONG)_ui.jpg)
+
+</details>
+---
+
 👤 Author
 
 Evgenii Matveev
