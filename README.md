@@ -71,6 +71,15 @@ MotherDuck-DuckDB-Course/
 
 ```
 
+---
+
+## 🧠 Key Insights
+
+- 📈 Complaint volume shows **clear seasonal spikes (summer peak)**
+- 🏙️ Bronx consistently generates the **highest number of complaints**
+- 🔧 Majority of issues are related to **non-working elevators and lack of backup systems**
+- ⚠️ Infrastructure reliability remains a **system-wide issue across boroughs**
+- 📊 Demand is **not evenly distributed**, correlating with urban density
 
 ---
 
