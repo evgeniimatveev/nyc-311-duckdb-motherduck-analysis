@@ -5,8 +5,9 @@ import duckdb
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_FILE = BASE_DIR / "elt.duckdb"
-CSV_EXPORT = BASE_DIR / "clean_requests.csv"
-PARQUET_EXPORT = BASE_DIR / "clean_requests.parquet"
+EXPORT_DIR = BASE_DIR / "exports"
+CSV_EXPORT = EXPORT_DIR / "clean_requests.csv"
+PARQUET_EXPORT = EXPORT_DIR / "clean_requests.parquet"
 
 
 def main() -> None:
