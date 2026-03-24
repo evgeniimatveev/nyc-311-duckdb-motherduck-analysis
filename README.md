@@ -9,9 +9,9 @@ Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics.
 ![Docker](https://img.shields.io/badge/Docker-Containerization-blue?logo=docker&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
--This project is a **data analysis + lightweight ETL pipeline** built using DuckDB and MotherDuck.  
--It focuses on **NYC 311 Elevator Service Requests**, transforming raw data into **insight-driven storytelling**.
--Includes automated export validation (CSV vs Parquet consistency check).
+- This project is a **data analysis + lightweight ETL pipeline** built using DuckDB and MotherDuck.  
+- It focuses on **NYC 311 Elevator Service Requests**, transforming raw data into **insight-driven storytelling**.
+- Includes automated export validation (CSV vs Parquet consistency check).
 
 Perfect for showcasing:
 - SQL analytics skills  
