@@ -275,8 +275,8 @@ docker compose run --rm pipeline_runner
 
 👤 Author
 
-Evgenii Matveev
-Data Analyst | MLOps | Automation
+- Evgenii Matveev
+- Data Analyst | MLOps | Automation
 
 ---
 
