@@ -152,6 +152,21 @@ MotherDuck-DuckDB-Course/
 
 ---
 
+### 🧪 First Aggregation Step
+![First Aggregation](screenshots/Storytelling/Run%20your%20first%20aggregation_ui.jpg)
+
+### 🏢 Top Agencies Handling Requests
+![Top Agencies](screenshots/Storytelling/top%20agencies%20handling%20requests_ui.jpg)
+
+### 📘 Query Plan Inspection
+![Explain](screenshots/Storytelling/EXPLAIN_ui.jpg)
+
+### 🚀 Advanced Analysis Version
+![Advanced Version](screenshots/Storytelling/Advanced%20version%20(%20THIS%20IS%20STRONG)_ui.jpg)
+
+
+---
+
 👤 Author
 
 Evgenii Matveev
