@@ -14,6 +14,8 @@ def main() -> None:
     print("DuckDB Export Pipeline")
     print(f"Database file: {DB_FILE}")
 
+    EXPORT_DIR.mkdir(parents=True, exist_ok=True)
+
     con = duckdb.connect(str(DB_FILE))
 
     con.execute(f"""
