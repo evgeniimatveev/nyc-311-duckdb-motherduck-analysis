@@ -131,6 +131,67 @@ MotherDuck-DuckDB-Course/
 
 ---
 
+## 📸 Storytelling (Visual Analysis)
+
+<details>
+<summary>📈 Monthly Trend by Borough</summary>
+
+![Monthly Trend](screenshots/Storytelling/Monthly%20trend%20by%20borough_ui.jpg)
+
+</details>
+
+<details>
+<summary>🌿 Total Complaints by Borough</summary>
+
+![Total Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
+
+</details>
+
+<details>
+<summary>🔝 Top Complaint Types</summary>
+
+![Top Complaints](screenshots/Storytelling/top%20complaint%20descriptors_ui.jpg)
+
+</details>
+
+<details>
+<summary>📊 Peak Month Detection</summary>
+
+![Peak Months](screenshots/Storytelling/Peak%20months%20detection_ui.jpg)
+
+</details>
+
+<details>
+<summary>🔍 Multi-Borough Comparison</summary>
+
+![Comparison](screenshots/Storytelling/Multi-borough%20comparison%20(PORTFOLIO%20GOLD)_ui.jpg)
+
+</details>
+
+<details>
+<summary>🧠 Advanced Analysis (EXPLAIN ANALYZE)</summary>
+
+![Explain](screenshots/Storytelling/EXPLAIN%20ANALYZE%20%E2%80%94%20Real%20Execution_ui.jpg)
+
+</details>
+
+<details>
+<summary>⚙️ Query Optimization</summary>
+
+![Optimization](screenshots/Storytelling/Improve%20the%20query%20(VERY%20IMPORTANT)_ui.jpg)
+
+</details>
+
+<details>
+<summary>🧩 Schema Inspection</summary>
+
+![Schema](screenshots/Storytelling/Inspect%20schema_ui.jpg)
+
+</details>
+
+
+---
+
 👤 Author
 
 Evgenii Matveev
