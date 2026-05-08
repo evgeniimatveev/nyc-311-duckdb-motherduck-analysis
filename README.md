@@ -322,5 +322,3 @@ Original repo: [andkret/MotherDuck-DuckDB-Course](https://github.com/andkret/Mot
 - GitHub: [evgeniimatveev](https://github.com/evgeniimatveev)
 - Portfolio: [datascienceportfol.io/evgeniimatveevusa](https://www.datascienceportfol.io/evgeniimatveevusa)
 - LinkedIn: [Evgenii Matveev](https://www.linkedin.com/in/evgenii-matveev-510926276/)
-
->>>>>>> Stashed changes
