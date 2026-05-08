@@ -177,6 +177,15 @@ docker compose run --rm pipeline_runner
 </details>
 
 <details>
+<summary>Top Complaint Types</summary>
+
+**Insight:** Most complaints are driven by non-working elevators and lack of backup systems, revealing critical reliability issues across building infrastructure.
+
+![Top Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
+
+</details>
+
+<details>
 <summary>Peak Month Detection</summary>
 
 **Insight:** Complaint peaks occur during summer months, while steady activity during winter indicates persistent baseline demand.
@@ -195,6 +204,42 @@ docker compose run --rm pipeline_runner
 </details>
 
 <details>
+<summary>Top Agencies Handling Requests</summary>
+
+**Insight:** All elevator-related complaints are handled by a single agency (DOB), indicating centralized responsibility but potential operational bottlenecks.
+
+![Top Agencies](screenshots/Storytelling/top%20agencies%20handling%20requests_ui.jpg)
+
+</details>
+
+<details>
+<summary>First Aggregation Step</summary>
+
+**Insight:** Initial aggregation confirms consistent monthly complaint distribution and establishes a reliable baseline for further analytical exploration.
+
+![First Aggregation](screenshots/Storytelling/Run%20your%20first%20aggregation_ui.jpg)
+
+</details>
+
+<details>
+<summary>Schema Inspection</summary>
+
+**Insight:** Flexible schema with multiple categorical and timestamp fields enables powerful analysis but requires careful type handling and data preparation.
+
+![Schema](screenshots/Storytelling/Inspect%20schema_ui.jpg)
+
+</details>
+
+<details>
+<summary>Query Plan Inspection (EXPLAIN)</summary>
+
+**Insight:** The execution plan shows a sequential scan followed by projection and aggregation, illustrating DuckDB's efficient pipeline-based query processing.
+
+![Explain](screenshots/Storytelling/EXPLAIN_ui.jpg)
+
+</details>
+
+<details>
 <summary>EXPLAIN ANALYZE — Real Execution Metrics</summary>
 
 **Insight:** Real execution metrics confirm fast query performance, demonstrating DuckDB's efficiency for analytical workloads.
@@ -209,6 +254,15 @@ docker compose run --rm pipeline_runner
 **Insight:** Optimized queries improve execution clarity and efficiency.
 
 ![Optimization](screenshots/Storytelling/Improve%20the%20query%20(VERY%20IMPORTANT)_ui.jpg)
+
+</details>
+
+<details>
+<summary>Advanced Analysis</summary>
+
+**Insight:** Advanced analysis reinforces key patterns, emphasizing seasonal peaks and sustained infrastructure pressure throughout the year.
+
+![Advanced Version](screenshots/Storytelling/Advanced%20version%20(%20THIS%20IS%20STRONG)_ui.jpg)
 
 </details>
 
