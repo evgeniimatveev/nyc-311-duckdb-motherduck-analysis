@@ -16,10 +16,10 @@ Analyzes **NYC 311 Elevator Service Requests** — real open city data — to un
 Fully reproducible ELT pipeline: raw CSV → DuckDB transformations → validated CSV/Parquet exports → MotherDuck cloud layer.
 
 **Pipeline:** `Raw CSV → DuckDB ELT → Export (CSV + Parquet) → Validation → MotherDuck`
+  **Dataset:** 22,504 real NYC 311 elevator service requests  
 
 ---
-**Dataset:** 22,504 real NYC 311 elevator service requests
----
+
  ## Key Findings
 
   | Finding | Detail |
