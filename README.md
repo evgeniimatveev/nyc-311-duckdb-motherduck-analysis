@@ -1,170 +1,165 @@
-# 🐤 DuckDB ETL Pipeline — NYC 311 Complaints Analysis
+# NYC 311 Elevator Complaints — DuckDB · MotherDuck · Docker · Python
 
-Fully reproducible data pipeline using DuckDB, Docker, and SQL-based analytics — designed to simulate a production-ready data workflow.
-
-![DuckDB](https://img.shields.io/badge/DuckDB-Analytics-orange)
+![DuckDB](https://img.shields.io/badge/DuckDB-Analytics-orange?logo=duckdb&logoColor=white)
 ![MotherDuck](https://img.shields.io/badge/MotherDuck-Cloud-blue)
 ![Python](https://img.shields.io/badge/Python-ETL-yellow?logo=python&logoColor=black)
 ![SQL](https://img.shields.io/badge/SQL-Analysis-lightgrey)
 ![Docker](https://img.shields.io/badge/Docker-Containerization-blue?logo=docker&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-- This project is a **data analysis + lightweight ETL pipeline** built using DuckDB and MotherDuck.  
-- It focuses on **NYC 311 Elevator Service Requests**, transforming raw data into **insight-driven storytelling**.
-- Includes automated export validation (CSV vs Parquet consistency check).
+---
 
-Perfect for showcasing:
-- SQL analytics skills  
-- Data storytelling  
-- ETL automation  
-- Modern analytics stack (DuckDB + cloud)
+## What This Project Does
+
+Analyzes **NYC 311 Elevator Service Requests** — real open city data — to uncover complaint patterns across boroughs, seasons, and building types.
+
+Fully reproducible ELT pipeline: raw CSV → DuckDB transformations → validated CSV/Parquet exports → MotherDuck cloud layer.
+
+**Pipeline:** `Raw CSV → DuckDB ELT → Export (CSV + Parquet) → Validation → MotherDuck`
 
 ---
 
-## 📊 Project Overview
+## Key Findings
 
-This project explores complaint patterns across NYC boroughs.
-
-It answers key questions:
-- Do complaints follow seasonal patterns?
-- Which boroughs generate the most requests?
-- When do complaint peaks occur?
+| Finding | Detail |
+|---------|--------|
+| Bronx leads in complaint volume | Highest absolute count across all boroughs |
+| Clear summer peak every year | Mid-year seasonal spike consistent across boroughs |
+| Single agency handles all requests | DOB responsible for 100% of elevator complaints — potential bottleneck |
+| Non-working elevators dominate | Top complaint type by far, revealing infrastructure reliability gap |
+| Volume correlates with urban density | Staten Island lowest, Bronx + Brooklyn highest |
 
 ---
 
-## 🚀 Getting Started
+## SQL — DuckDB Patterns
 
-Clone the repository and navigate to the project folder:
+### Seasonal Trend by Borough
 
-```bash
-git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
+```sql
+SELECT
+    DATE_TRUNC('month', created_date)::DATE        AS month,
+    borough,
+    COUNT(*)                                        AS complaints,
+    ROUND(
+        COUNT(*) * 100.0 /
+        SUM(COUNT(*)) OVER (PARTITION BY DATE_TRUNC('month', created_date)),
+        1
+    )                                               AS pct_of_month
+FROM read_csv_auto('data/311_Elevator_Service_Requests_.csv')
+WHERE borough != 'Unspecified'
+GROUP BY 1, 2
+ORDER BY 1, complaints DESC;
+```
 
-cd nyc-311-duckdb-motherduck-analysis
+### Peak Month Detection (Window Function)
+
+```sql
+WITH monthly_stats AS (
+    SELECT
+        EXTRACT(year  FROM created_date) AS yr,
+        EXTRACT(month FROM created_date) AS mo,
+        COUNT(*)                         AS complaints
+    FROM clean_requests
+    GROUP BY 1, 2
+)
+SELECT
+    yr,
+    mo,
+    complaints,
+    RANK() OVER (PARTITION BY yr ORDER BY complaints DESC) AS rank_in_year
+FROM monthly_stats
+ORDER BY yr, rank_in_year;
+```
+
+### Query Performance Inspection
+
+```sql
+-- DuckDB EXPLAIN ANALYZE — real execution metrics
+EXPLAIN ANALYZE
+SELECT borough, COUNT(*) AS total
+FROM clean_requests
+GROUP BY borough
+ORDER BY total DESC;
+```
+
+---
+
+## Architecture
 
 ```
+Raw CSV (NYC Open Data)
+    └── DuckDB ELT (4_2_elt.py)
+            ├── SQL transformations + aggregations
+            └── Export pipeline (4_3_export.py)
+                    ├── clean_requests.csv
+                    ├── clean_requests.parquet
+                    └── check_exports.py (CSV vs Parquet validation)
+                            └── MotherDuck (cloud analytics layer)
+```
+
 ---
 
-## 🔧 Tech Stack
+## Project Structure
 
-- 🐤 **DuckDB** – in-process analytics engine  
-- ☁️ **MotherDuck** – cloud analytics layer  
-- 🐍 **Python** – ETL and export automation  
-- 🧠 **SQL** – data transformation and aggregation  
-- 🐳 **Docker** – reproducible environment  
-- 🧑‍💻 **VS Code** – development environment  
-
----
-
-## 📁 Project Structure
-
-```bash
+```
 nyc-311-duckdb-motherduck-analysis/
-│
 ├── data/
 │   └── 311_Elevator_Service_Requests_.csv
-│
 ├── exports/
 │   ├── clean_requests.csv
 │   └── clean_requests.parquet
-│
+├── scripts/
+│   ├── 4_2_elt.py          # ELT pipeline
+│   ├── 4_3_export.py       # CSV + Parquet export
+│   ├── check_exports.py    # consistency validation
+│   ├── run_pipeline.py     # full pipeline runner
+│   └── smoke_test_duckdb.py
 ├── screenshots/
 │   ├── DBeaver/
 │   ├── DuckDB(CLI)/
 │   └── Storytelling/
-│
-├── scripts/
-│   ├── 4_2_elt.py
-│   ├── 4_3_export.py
-│   ├── check_exports.py
-│   ├── run_pipeline.py
-│   └── smoke_test_duckdb.py
-│
-├── docker-compose.yml
 ├── Dockerfile
-├── requirements.txt
-├── elt.duckdb
-├── my_duckdb.duckdb
-└── README.md
-
+├── docker-compose.yml
+└── requirements.txt
 ```
----
-
-## ✅ Validation
-Follow these steps to run and validate the full pipeline locally:
-
-The pipeline was tested in a clean Docker environment from scratch.
-
-- ✔ Repository cloned into a fresh local directory
-- ✔ Docker image built successfully
-- ✔ ELT pipeline completed with exit code 0
-- ✔ Export pipeline generated CSV and Parquet outputs
-- ✔ Export files were re-generated successfully after cleanup
-- ✔ Output consistency verified between CSV and Parquet
-
-This ensures full reproducibility and reliability of the data pipeline.
 
 ---
 
-## 🧪 How to Validate the Pipeline (PowerShell)
+## How to Run
 
-Run the following steps to reproduce the pipeline and verify outputs locally:
+```bash
+# 1. Clone the repo
+git clone https://github.com/evgeniimatveev/nyc-311-duckdb-motherduck-analysis.git
+cd nyc-311-duckdb-motherduck-analysis
 
-### Optional: run a quick DuckDB smoke test
-```powershell
-# Verify DuckDB installation and basic query execution
+# 2. Run smoke test
 python scripts/smoke_test_duckdb.py
 
-# Or run the same check inside Docker
-docker compose run --rm duckdb_pipeline python scripts/smoke_test_duckdb.py
+# 3. Run full pipeline (Docker)
+docker compose run --rm duckdb_pipeline        # ELT
+docker compose run --rm export_pipeline        # Export
+docker compose run --rm duckdb_pipeline python scripts/check_exports.py  # Validate
 
-```
-### Run step-by-step pipeline validation
-```powershell
-# 1. Run ELT pipeline
-docker compose run --rm duckdb_pipeline
-
-# 2. Run export pipeline
-docker compose run --rm export_pipeline
-
-# 3. Verify exported files exist
-dir .\exports
-
-# 4. Validate CSV and Parquet consistency
-docker compose run --rm duckdb_pipeline python scripts/check_exports.py
-
-```
-###  Run full pipeline (one command)
-
-```powershell
-# Run full ETL + Export + Validation pipeline
+# 4. Or run everything at once
 docker compose run --rm pipeline_runner
 ```
----
-
-## 🧠 Key Insights
-
-- 📈 Complaint volume shows **clear seasonal spikes (summer peak)**
-- 🏙️ Bronx consistently generates the **highest number of complaints**
-- 🔧 Majority of issues are related to **non-working elevators and lack of backup systems**
-- ⚠️ Infrastructure reliability remains a **system-wide issue across boroughs**
-- 📊 Demand is **not evenly distributed**, correlating with urban density
 
 ---
 
-## 💼 Business Impact
+## Pipeline Validation Checklist
 
-- Helps identify **high-risk boroughs for infrastructure failure**
-- Supports **predictive maintenance planning**
-- Enables better **resource allocation across NYC**
-- Can be extended into **real-time monitoring dashboards**
-
+- Repository cloned into clean environment
+- Docker image built successfully
+- ELT pipeline completed with exit code 0
+- CSV and Parquet exports generated
+- Output consistency verified between formats
 
 ---
 
-## 📸 Data Storytelling & Visual Insights
+## Data Storytelling
 
 <details>
-<summary>📈 Monthly Trend by Borough</summary>
+<summary>Monthly Trend by Borough</summary>
 
 **Insight:** Seasonal trends are consistent across boroughs, with mid-year increases observed everywhere, while absolute complaint volume varies significantly by location.
 
@@ -173,108 +168,68 @@ docker compose run --rm pipeline_runner
 </details>
 
 <details>
-<summary>🌿 Total Complaints by Borough</summary>
+<summary>Total Complaints by Borough</summary>
 
-**Insight:** Bronx leads in total complaints, indicating higher infrastructure pressure, while Staten Island shows minimal activity, highlighting uneven system load distribution.
+**Insight:** Bronx leads in total complaints, indicating higher infrastructure pressure, while Staten Island shows minimal activity.
 
 ![Total Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
 
 </details>
 
 <details>
-<summary>🔝 Top Complaint Types</summary>
+<summary>Peak Month Detection</summary>
 
-**Insight:** Most complaints are driven by non-working elevators and lack of backup systems, revealing critical reliability issues across building infrastructure.
-
-![Top Complaints](screenshots/Storytelling/%20top%20complaint%20descriptors_ui.jpg)
-
-</details>
-
-<details>
-<summary>📊 Peak Month Detection</summary>
-
-**Insight:** Complaint peaks occur during summer months, while steady activity during winter indicates persistent baseline demand throughout the year.
+**Insight:** Complaint peaks occur during summer months, while steady activity during winter indicates persistent baseline demand.
 
 ![Peak Months](screenshots/Storytelling/Peak%20months%20detection_ui.jpg)
 
 </details>
 
 <details>
-<summary>🔍 Multi-Borough Comparison</summary>
+<summary>Multi-Borough Comparison</summary>
 
-**Insight:** Higher complaint volumes correlate with urban density and building concentration, with Bronx experiencing the greatest system load.
+**Insight:** Higher complaint volumes correlate with urban density and building concentration.
 
 ![Comparison](screenshots/Storytelling/Multi-borough%20comparison%20(PORTFOLIO%20GOLD)_ui.jpg)
 
 </details>
 
 <details>
-<summary>🏢 Top Agencies Handling Requests</summary>
+<summary>EXPLAIN ANALYZE — Real Execution Metrics</summary>
 
-**Insight:** All elevator-related complaints are handled by a single agency (DOB), indicating centralized responsibility but potential operational bottlenecks.
-
-![Top Agencies](screenshots/Storytelling/top%20agencies%20handling%20requests_ui.jpg)
-
-</details>
-
-<details>
-<summary>🧪 First Aggregation Step</summary>
-
-**Insight:** Initial aggregation confirms consistent monthly complaint distribution and establishes a reliable baseline for further analytical exploration.
-
-![First Aggregation](screenshots/Storytelling/Run%20your%20first%20aggregation_ui.jpg)
-
-</details>
-
-<details>
-<summary>📘 Query Plan Inspection (EXPLAIN)</summary>
-
-**Insight:** The execution plan shows a sequential scan followed by projection and aggregation, illustrating DuckDB’s efficient pipeline-based query processing.
-
-![Explain](screenshots/Storytelling/EXPLAIN_ui.jpg)
-
-</details>
-
-<details>
-<summary>🧠 Advanced Analysis (EXPLAIN ANALYZE)</summary>
-
-**Insight:** Real execution metrics confirm fast query performance with minimal processing time, demonstrating DuckDB’s efficiency for analytical workloads.
+**Insight:** Real execution metrics confirm fast query performance, demonstrating DuckDB's efficiency for analytical workloads.
 
 ![Explain Analyze](screenshots/Storytelling/EXPLAIN%20ANALYZE%20%E2%80%94%20Real%20Execution_ui.jpg)
 
 </details>
 
 <details>
-<summary>⚙️ Query Optimization</summary>
+<summary>Query Optimization</summary>
 
-**Insight:** Optimized queries improve execution clarity and efficiency, highlighting the importance of proper aggregation and filtering strategies.
+**Insight:** Optimized queries improve execution clarity and efficiency.
 
 ![Optimization](screenshots/Storytelling/Improve%20the%20query%20(VERY%20IMPORTANT)_ui.jpg)
 
 </details>
 
-<details>
-<summary>🧩 Schema Inspection</summary>
+---
 
-**Insight:** Flexible schema with multiple categorical and timestamp fields enables powerful analysis but requires careful type handling and data preparation.
+## Stack
 
-![Schema](screenshots/Storytelling/Inspect%20schema_ui.jpg)
-
-</details>
-
-<details>
-<summary>🚀 Advanced Analysis Version</summary>
-
-**Insight:** Advanced analysis reinforces key patterns, emphasizing seasonal peaks and sustained infrastructure pressure throughout the year.
-
-![Advanced Version](screenshots/Storytelling/Advanced%20version%20(%20THIS%20IS%20STRONG)_ui.jpg)
-
-</details>
+| Layer | Technology |
+|-------|-----------|
+| Analytics Engine | DuckDB (in-process) |
+| Cloud Layer | MotherDuck |
+| ETL Automation | Python |
+| Containerization | Docker + Docker Compose |
+| Export Formats | CSV + Parquet |
+| Validation | Automated consistency checks |
 
 ---
 
-👤 Author
+## Credits
 
+<<<<<<< Updated upstream
 - Evgenii Matveev
 - Data Analyst | MLOps | Automation
 
@@ -303,3 +258,15 @@ This project was inspired by his course and helped me better understand modern a
 Highly recommend his content if you're learning data engineering 🚀
 
 </details>
+=======
+Inspired by **Andreas Kretz** and his DuckDB + MotherDuck course.
+Original repo: [andkret/MotherDuck-DuckDB-Course](https://github.com/andkret/MotherDuck-DuckDB-Course)
+
+---
+
+## Connect
+
+- GitHub: [evgeniimatveev](https://github.com/evgeniimatveev)
+- Portfolio: [datascienceportfol.io/evgeniimatveevusa](https://www.datascienceportfol.io/evgeniimatveevusa)
+- LinkedIn: [Evgenii Matveev](https://www.linkedin.com/in/evgenii-matveev-510926276/)
+>>>>>>> Stashed changes
