@@ -19,15 +19,16 @@ Fully reproducible ELT pipeline: raw CSV → DuckDB transformations → validate
 
 ---
 
-## Key Findings
+ ## Key Findings
 
-| Finding | Detail |
-|---------|--------|
-| Bronx leads in complaint volume | Highest absolute count across all boroughs |
-| Clear summer peak every year | Mid-year seasonal spike consistent across boroughs |
-| Single agency handles all requests | DOB responsible for 100% of elevator complaints — potential bottleneck |
-| Non-working elevators dominate | Top complaint type by far, revealing infrastructure reliability gap |
-| Volume correlates with urban density | Staten Island lowest, Bronx + Brooklyn highest |
+  | Finding | Detail |
+  |---------|--------|
+  | Bronx dominates complaint volume | **9,339 complaints — 41.5%** of all 22,504 records |
+  | Clear summer peak | July peaks at **2,432 complaints** — 62% above February low (1,502) |
+  | DOB handles nearly all requests | DOB: **20,825 records (92.5%)** — centralized but potential bottleneck |
+  | Single-device failures lead | "No alternate service": **13,195 cases (58.6%** of all complaints) |
+  | Staten Island vs Bronx gap | **208 complaints (0.9%)** vs Bronx **41.5%** — 45× difference |
+
 
 ---
 
