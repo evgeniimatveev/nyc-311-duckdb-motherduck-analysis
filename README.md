@@ -283,7 +283,6 @@ docker compose run --rm pipeline_runner
 
 ## Credits
 
-<<<<<<< Updated upstream
 - Evgenii Matveev
 - Data Analyst | MLOps | Automation
 
@@ -312,7 +311,7 @@ This project was inspired by his course and helped me better understand modern a
 Highly recommend his content if you're learning data engineering 🚀
 
 </details>
-=======
+
 Inspired by **Andreas Kretz** and his DuckDB + MotherDuck course.
 Original repo: [andkret/MotherDuck-DuckDB-Course](https://github.com/andkret/MotherDuck-DuckDB-Course)
 
@@ -323,4 +322,5 @@ Original repo: [andkret/MotherDuck-DuckDB-Course](https://github.com/andkret/Mot
 - GitHub: [evgeniimatveev](https://github.com/evgeniimatveev)
 - Portfolio: [datascienceportfol.io/evgeniimatveevusa](https://www.datascienceportfol.io/evgeniimatveevusa)
 - LinkedIn: [Evgenii Matveev](https://www.linkedin.com/in/evgenii-matveev-510926276/)
+
 >>>>>>> Stashed changes
