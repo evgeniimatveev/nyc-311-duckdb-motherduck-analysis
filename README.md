@@ -18,7 +18,8 @@ Fully reproducible ELT pipeline: raw CSV → DuckDB transformations → validate
 **Pipeline:** `Raw CSV → DuckDB ELT → Export (CSV + Parquet) → Validation → MotherDuck`
 
 ---
-
+**Dataset:** 22,504 real NYC 311 elevator service requests
+---
  ## Key Findings
 
   | Finding | Detail |
@@ -29,7 +30,6 @@ Fully reproducible ELT pipeline: raw CSV → DuckDB transformations → validate
   | Single-device failures lead | "No alternate service": **13,195 cases (58.6%** of all complaints) |
   | Staten Island vs Bronx gap | **208 complaints (0.9%)** vs Bronx **41.5%** — 45× difference |
 
- **Dataset:** 22,504 real NYC 311 elevator service requests
 ---
 
 ## SQL — DuckDB Patterns
