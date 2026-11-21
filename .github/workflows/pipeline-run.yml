@@ -1,0 +1,26 @@
+name: Pipeline run (manual)
+
+# Manual only: click "Run workflow" in the Actions tab. No push / PR / schedule triggers.
+# Runs the whole pipeline the way the README describes (Docker Compose: ELT -> export -> validation),
+# then re-computes the figures quoted in the README from the raw CSV.
+on:
+  workflow_dispatch:
+  push:
+    branches: [ci/checks]   # TEMPORARY: to test before merge
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - name: Keep a copy of the committed exports
+        run: cp -r exports /tmp/committed_exports
+      - name: Full pipeline in Docker (ELT, export, validation)
+        run: docker compose run --rm pipeline_runner
+      - uses: astral-sh/setup-uv@v7
+      - name: README figures and export consistency (see Job Summary for the table)
+        run: uv run --no-project --with duckdb python scripts/check_readme.py /tmp/committed_exports
