@@ -158,6 +158,17 @@ docker compose run --rm pipeline_runner
 
 ---
 
+## Continuous Integration
+
+| Workflow | When | What it does |
+|----------|------|--------------|
+| [`files-check.yml`](.github/workflows/files-check.yml) | every push and pull request | Scripts compile, every README link and image points to an existing file, the raw CSV has the expected columns |
+| [`pipeline-run.yml`](.github/workflows/pipeline-run.yml) | **manual**: Actions → *Pipeline run (manual)* → *Run workflow* | Runs the whole pipeline with Docker Compose (ELT → export → validation), then **re-computes the 14 figures quoted in this README** from the raw CSV and compares the fresh exports with the committed ones |
+
+Last full run: **19 of 19 checks passed**: every number in *Key findings* above matches the data.
+
+---
+
 ## Data Storytelling
 
 <details>

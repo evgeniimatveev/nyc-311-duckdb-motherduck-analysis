@@ -5,8 +5,6 @@ name: Pipeline run (manual)
 # then re-computes the figures quoted in the README from the raw CSV.
 on:
   workflow_dispatch:
-  push:
-    branches: [ci/checks]   # TEMPORARY: to test before merge
 
 permissions:
   contents: read
